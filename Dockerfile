@@ -6,7 +6,6 @@ ENV DEBIAN_FRONTEND="noninteractive"
 
 RUN apt-get update && apt-get install -y \
     nano \
-    imagemagick \
     apache2 \
     subversion \
     ghostscript \
@@ -26,11 +25,13 @@ RUN apt-get update && apt-get install -y \
     php-mbstring \
     php-zip \
     libapache2-mod-php \
-    ffmpeg \
     libopencv-dev \
     python3-opencv \
     python3 \
     python3-pip \
+ && apt-get install -y --no-install-recommends \
+    ffmpeg \
+    imagemagick \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
