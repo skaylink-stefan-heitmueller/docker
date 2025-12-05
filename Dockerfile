@@ -53,7 +53,7 @@ sed -i -e "s/max_execution_time\s*=\s*30/max_execution_time = 300/g" /etc/php/${
 sed -i -e "s/memory_limit\s*=\s*128M/memory_limit = 1G/g" /etc/php/${php}/apache2/php.ini
 EOI
 
-RUN <<EOI
+RUN bash <<EOI
 set -e
 (
     echo '<Directory /var/www/>'
